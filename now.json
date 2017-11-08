@@ -1,0 +1,9 @@
+{
+  "name": "houseTemperature",
+  "type": "docker",
+  "files": [
+    "target/",
+    "target/dist/",
+    "target/dist/houseTemperature-1.0.0/dist/houseTemperature-1.0.0-py3-none-any.whl"
+  ]
+}

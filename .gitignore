@@ -1,0 +1,16 @@
+# Build folder and log file
+build/
+build.log
+
+# Virtual env
+venv/
+
+# General
+.DS_Store
+.idea/
+__pycache__
+
+#Pybuild
+target/
+
+# Data from ngrams
