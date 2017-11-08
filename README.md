@@ -1,19 +1,11 @@
-# dsToolbox
-Flask App for the Data Science team
+# houseTemperature
+Flask App to track house temperature
 
-#### Todo:
-- [x] Built Template 
-- [x] Add virtual env and freeze requirements
-- [x] Add pybuilder
-- [x] Dockerise
-- [ ] Deploy
 
 
 ```bash
 tree -I "venv|__pycache__|target" 
-
-.
-├── Dockerfile
+── Dockerfile
 ├── README.md
 ├── build.py
 ├── build_template_flask.sh
@@ -23,29 +15,30 @@ tree -I "venv|__pycache__|target"
 └── src
     ├── main
     │   ├── python
-    │   │   └── dsToolbox
+    │   │   └── houseTemperature
     │   │       ├── __init__.py
     │   │       ├── app.py
     │   │       ├── controllers
     │   │       │   ├── __init__.py
     │   │       │   ├── home.py
-    │   │       │   └── ngrams.py
+    │   │       │   ├── temperature.py
+    │   │       │   └── zoegs.py
     │   │       ├── models
     │   │       │   ├── __init__.py
-    │   │       │   └── home.py
+    │   │       │   ├── home.py
+    │   │       │   ├── tempKey.json
+    │   │       │   └── temperature.py
     │   │       ├── run.py
     │   │       ├── static
     │   │       └── templates
     │   │           ├── base.html
     │   │           ├── home.html
-    │   │           └── ngrams.html
+    │   │           └── zoegs.html
     │   └── scripts
     └── unittest
         └── python
+            └── test.py
 ```
-
-#### N-grams page
-- Upload csv with column named Comments. N-grams is calculated with the column
 
 ## Package
 I am using the pybuilder package to manage the building and testing. Simply run the below in the root directory to build.
@@ -59,25 +52,29 @@ pyb
 
 Running this cmd from the root:
 ```commandline
-docker build -t dstoolbox .
+docker build -t housetemperature .
 ```
+
 Runnning the server from the Docker file
 ```commandline
-docker run -it --name dsToolBoxRunner -p 5000:5000 dstoolbox
+docker run -it --name tempRunner -p 5000:5000 housetemperature
 ```
 
 check it is running:
 ```commandline
 docker ps
 ```
+
 Note this just just shows the runnin ones, to see all use
 ```commandline
 docker ps -a
 ```
+
 To delete all containers us this (q restricts the sub cmd to give just ids)
 ```commandline
 docker rm $(docker ps -a -q)
 ```
+
 
 Or use this to get rid of the exited ones:
 ```commandline
